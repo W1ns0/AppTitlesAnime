@@ -2,6 +2,7 @@
 using AppTitlesAnime.Models;
 using Microsoft.EntityFrameworkCore;
 using AppContext = AppTitlesAnime.Models.AppContext;
+using Type = AppTitlesAnime.Models.Type;
 
 namespace AppTitlesAnime
 {
@@ -40,7 +41,20 @@ namespace AppTitlesAnime
         private void BtnAddType_Click(object sender, EventArgs e)
         {
             FormAddType formAddtype = new FormAddType();
-            formAddtype.ShowDialog();
+            DialogResult result = formAddtype.ShowDialog(this);
+
+            if (result == DialogResult.Cancel)
+                return;
+
+            Type type = new Type();
+            type.TypeName = formAddtype.textBoxTypeName.Text;
+
+            db.Types.Add(type);
+            db.SaveChanges();
+
+            MessageBox.Show("Новый объект добавлен");
+
+            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
         }
     }
 }
