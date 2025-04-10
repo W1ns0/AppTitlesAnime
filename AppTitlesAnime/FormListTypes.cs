@@ -19,7 +19,7 @@ namespace AppTitlesAnime
             base.OnLoad(e);
             this.db = new AppContext();
             this.db.Types.Load();
-            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o=>o.TypeName).ToList();
+            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
 
             //скрытие столбцов
             dataGridViewTypes.Columns["Id"].Visible = false;
@@ -53,6 +53,36 @@ namespace AppTitlesAnime
             db.SaveChanges();
 
             MessageBox.Show("Новый объект добавлен");
+
+            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
+        }
+
+        private void BtnUpdateType_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewTypes.SelectedRows.Count == 0)         
+                return;
+
+            int index = dataGridViewTypes.SelectedRows[0].Index;
+            short id = 0;
+
+            bool converted = Int16.TryParse(dataGridViewTypes[0, index].Value.ToString(), out id);
+            if (!converted)
+                return;
+
+            Type type = db.Types.Find(id);
+            FormAddType formAddtype = new();
+            formAddtype.textBoxTypeName.Text = type.TypeName;
+
+            DialogResult result = formAddtype.ShowDialog(this);
+
+            if(result == DialogResult.Cancel) 
+                return;
+
+            type.TypeName = formAddtype.textBoxTypeName.Text;
+            db.Types.Update(type);
+            db.SaveChanges();
+
+            MessageBox.Show("Объект изменён");
 
             this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
         }
