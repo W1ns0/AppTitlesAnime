@@ -44,7 +44,7 @@
             btnAddStatus.AutoSize = true;
             btnAddStatus.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnAddStatus.Location = new Point(18, 18);
-            btnAddStatus.Margin = new Padding(8, 8, 8, 8);
+            btnAddStatus.Margin = new Padding(8);
             btnAddStatus.Name = "btnAddStatus";
             btnAddStatus.Size = new Size(106, 35);
             btnAddStatus.TabIndex = 0;
@@ -57,24 +57,26 @@
             btnUpdateStatus.AutoSize = true;
             btnUpdateStatus.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnUpdateStatus.Location = new Point(140, 18);
-            btnUpdateStatus.Margin = new Padding(8, 8, 8, 8);
+            btnUpdateStatus.Margin = new Padding(8);
             btnUpdateStatus.Name = "btnUpdateStatus";
             btnUpdateStatus.Size = new Size(151, 35);
             btnUpdateStatus.TabIndex = 1;
             btnUpdateStatus.Text = "Редактировать";
             btnUpdateStatus.UseVisualStyleBackColor = true;
+            btnUpdateStatus.Click += BtnUpdateStatus_Click;
             // 
             // btnDeleteStatus
             // 
             btnDeleteStatus.AutoSize = true;
             btnDeleteStatus.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnDeleteStatus.Location = new Point(307, 18);
-            btnDeleteStatus.Margin = new Padding(8, 8, 8, 8);
+            btnDeleteStatus.Margin = new Padding(8);
             btnDeleteStatus.Name = "btnDeleteStatus";
             btnDeleteStatus.Size = new Size(95, 35);
             btnDeleteStatus.TabIndex = 2;
             btnDeleteStatus.Text = "Удалить";
             btnDeleteStatus.UseVisualStyleBackColor = true;
+            btnDeleteStatus.Click += BtnDeleteStatus_Click;
             // 
             // panelFill
             // 
@@ -95,7 +97,7 @@
             dataGridViewStatuses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewStatuses.Dock = DockStyle.Fill;
             dataGridViewStatuses.Location = new Point(10, 10);
-            dataGridViewStatuses.Margin = new Padding(8, 8, 8, 8);
+            dataGridViewStatuses.Margin = new Padding(8);
             dataGridViewStatuses.MultiSelect = false;
             dataGridViewStatuses.Name = "dataGridViewStatuses";
             dataGridViewStatuses.ReadOnly = true;
@@ -126,7 +128,7 @@
             Controls.Add(panelFill);
             Controls.Add(flowLayoutPanelTop);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            Margin = new Padding(5, 5, 5, 5);
+            Margin = new Padding(5);
             Name = "FormListStatus";
             Text = "Список статусов аниме";
             panelFill.ResumeLayout(false);
