@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using AppTitlesAnime.Models;
 using Microsoft.EntityFrameworkCore;
 using AppContext = AppTitlesAnime.Models.AppContext;
 
@@ -35,10 +36,22 @@ namespace AppTitlesAnime
             this.db = null;
         }
 
-        private void BtnAddGenre_Click(object sender, EventArgs e)
+        private void BtnAddStatus_Click(object sender, EventArgs e)
         {
-            FormAddStatus formAddStatus = new FormAddStatus();
-            formAddStatus.ShowDialog();
+            FormAddStatus formAddStatus = new();
+            DialogResult result = formAddStatus.ShowDialog(this);
+
+            if (result == DialogResult.Cancel)
+                return;
+
+            Status status = new Status();
+            status.StatusName = formAddStatus.textBoxStatusName.Text;
+            db.Statuses.Add(status);
+            db.SaveChanges();
+
+            MessageBox.Show("Новый объект добавлен");
+
+            this.dataGridViewStatuses.DataSource = this.db.Statuses.Local.OrderBy(o => o.StatusName).ToList();
         }
     }
 }

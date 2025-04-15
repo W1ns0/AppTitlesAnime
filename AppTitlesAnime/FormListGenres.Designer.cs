@@ -48,7 +48,7 @@
             flowLayoutPanelTop.Controls.Add(btnDeleteGenre);
             flowLayoutPanelTop.Dock = DockStyle.Top;
             flowLayoutPanelTop.Location = new Point(0, 0);
-            flowLayoutPanelTop.Margin = new Padding(5, 5, 5, 5);
+            flowLayoutPanelTop.Margin = new Padding(5);
             flowLayoutPanelTop.Name = "flowLayoutPanelTop";
             flowLayoutPanelTop.Padding = new Padding(10);
             flowLayoutPanelTop.Size = new Size(934, 65);
@@ -59,7 +59,7 @@
             btnAddGenre.AutoSize = true;
             btnAddGenre.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnAddGenre.Location = new Point(15, 15);
-            btnAddGenre.Margin = new Padding(5, 5, 5, 5);
+            btnAddGenre.Margin = new Padding(5);
             btnAddGenre.Name = "btnAddGenre";
             btnAddGenre.Size = new Size(106, 35);
             btnAddGenre.TabIndex = 0;
@@ -72,7 +72,7 @@
             btnUpdateGenre.AutoSize = true;
             btnUpdateGenre.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnUpdateGenre.Location = new Point(131, 15);
-            btnUpdateGenre.Margin = new Padding(5, 5, 5, 5);
+            btnUpdateGenre.Margin = new Padding(5);
             btnUpdateGenre.Name = "btnUpdateGenre";
             btnUpdateGenre.Size = new Size(151, 35);
             btnUpdateGenre.TabIndex = 1;
@@ -84,7 +84,7 @@
             btnDeleteGenre.AutoSize = true;
             btnDeleteGenre.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnDeleteGenre.Location = new Point(292, 15);
-            btnDeleteGenre.Margin = new Padding(5, 5, 5, 5);
+            btnDeleteGenre.Margin = new Padding(5);
             btnDeleteGenre.Name = "btnDeleteGenre";
             btnDeleteGenre.Size = new Size(95, 35);
             btnDeleteGenre.TabIndex = 2;
@@ -97,7 +97,7 @@
             panelFill.Controls.Add(dataGridViewGenres);
             panelFill.Dock = DockStyle.Fill;
             panelFill.Location = new Point(0, 65);
-            panelFill.Margin = new Padding(5, 5, 5, 5);
+            panelFill.Margin = new Padding(5);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10);
             panelFill.Size = new Size(934, 446);
@@ -110,7 +110,7 @@
             dataGridViewGenres.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewGenres.Dock = DockStyle.Fill;
             dataGridViewGenres.Location = new Point(10, 10);
-            dataGridViewGenres.Margin = new Padding(5, 5, 5, 5);
+            dataGridViewGenres.Margin = new Padding(5);
             dataGridViewGenres.MultiSelect = false;
             dataGridViewGenres.Name = "dataGridViewGenres";
             dataGridViewGenres.ReadOnly = true;
@@ -126,7 +126,7 @@
             Controls.Add(panelFill);
             Controls.Add(flowLayoutPanelTop);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            Margin = new Padding(5, 5, 5, 5);
+            Margin = new Padding(5);
             Name = "FormListGenres";
             Text = "Список жанров аниме";
             flowLayoutPanelTop.ResumeLayout(false);
