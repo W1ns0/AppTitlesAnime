@@ -1,15 +1,14 @@
 ﻿using System.ComponentModel;
-using AppTitlesAnime.Models;
 using Microsoft.EntityFrameworkCore;
 using AppContext = AppTitlesAnime.Models.AppContext;
 
 namespace AppTitlesAnime
 {
-    public partial class FormListGenres : Form
+    public partial class FormListStatus : Form
     {
         private AppContext db;
 
-        public FormListGenres()
+        public FormListStatus()
         {
             InitializeComponent();
         }
@@ -18,17 +17,16 @@ namespace AppTitlesAnime
         {
             base.OnLoad(e);
             this.db = new AppContext();
-            this.db.Genres.Load();
-            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
+            this.db.Statuses.Load();
+            this.dataGridViewStatuses.DataSource = this.db.Statuses.Local.OrderBy(o => o.StatusName).ToList();
 
-            //скрытие столбцов
-            dataGridViewGenres.Columns["Id"].Visible = false;
-            dataGridViewGenres.Columns["TitlesGenres"].Visible = false;
+            //Скрытие столбцов
+            dataGridViewStatuses.Columns["Id"].Visible = false;
+            dataGridViewStatuses.Columns["TitlesStatuses"].Visible = false;
 
             // изменение названий заголовков столбцов
-            dataGridViewGenres.Columns["GenreName"].HeaderText = "Жанр аниме";
+            dataGridViewStatuses.Columns["StatusName"].HeaderText = "Статус аниме";
         }
-
         protected override void OnClosing(CancelEventArgs e)
         {
             base.OnClosing(e);
@@ -39,8 +37,8 @@ namespace AppTitlesAnime
 
         private void BtnAddGenre_Click(object sender, EventArgs e)
         {
-            FormAddGenre formAddGenre = new FormAddGenre();
-            formAddGenre.ShowDialog();
+            FormAddStatus formAddStatus = new FormAddStatus();
+            formAddStatus.ShowDialog();
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             btnShowTypes = new Button();
             btnShowGenres = new Button();
+            btnShowStatuses = new Button();
             SuspendLayout();
             // 
             // btnShowTypes
@@ -52,7 +53,18 @@
             btnShowGenres.TabIndex = 1;
             btnShowGenres.Text = "Отобразить список \"Жанры аниме\"";
             btnShowGenres.UseVisualStyleBackColor = true;
-            btnShowGenres.Click += btnShowGenres_Click;
+            btnShowGenres.Click += BtnShowGenres_Click;
+            // 
+            // btnShowStatuses
+            // 
+            btnShowStatuses.AutoSize = true;
+            btnShowStatuses.Location = new Point(12, 94);
+            btnShowStatuses.Name = "btnShowStatuses";
+            btnShowStatuses.Size = new Size(329, 35);
+            btnShowStatuses.TabIndex = 2;
+            btnShowStatuses.Text = "Отобразить список \"Статус аниме\"";
+            btnShowStatuses.UseVisualStyleBackColor = true;
+            btnShowStatuses.Click += BtnShowStatuses_Click;
             // 
             // FormMain
             // 
@@ -60,6 +72,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(845, 409);
+            Controls.Add(btnShowStatuses);
             Controls.Add(btnShowGenres);
             Controls.Add(btnShowTypes);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -74,5 +87,6 @@
 
         private Button btnShowTypes;
         private Button btnShowGenres;
+        private Button btnShowStatuses;
     }
 }
