@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using AppTitlesAnime.Models;
 using Microsoft.EntityFrameworkCore;
 using AppContext = AppTitlesAnime.Models.AppContext;
 using Type = AppTitlesAnime.Models.Type;
@@ -46,8 +45,10 @@ namespace AppTitlesAnime
             if (result == DialogResult.Cancel)
                 return;
 
-            Type type = new Type();
-            type.TypeName = formAddtype.textBoxTypeName.Text;
+            Type type = new Type
+            {
+                TypeName = formAddtype.textBoxTypeName.Text
+            };
 
             db.Types.Add(type);
             db.SaveChanges();
