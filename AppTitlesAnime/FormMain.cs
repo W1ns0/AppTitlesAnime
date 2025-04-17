@@ -21,8 +21,8 @@ namespace AppTitlesAnime
 
         private void BtnShowStatuses_Click(object sender, EventArgs e)
         {
-            FormListStatus formListStatus = new FormListStatus();
-            formListStatus.Show();
+            FormListStatus formListStatus = new FormListStatus(); // Создаем новый экземпляр формы Статус
+            formListStatus.Show(); // Открываем форму
         }
     }
 }
