@@ -39,7 +39,7 @@ namespace AppTitlesAnime
 
         private void BtnAddType_Click(object sender, EventArgs e)
         {
-            FormAddType formAddtype = new FormAddType();
+            FormAddUpdateType formAddtype = new FormAddUpdateType();
             DialogResult result = formAddtype.ShowDialog(this);
 
             if (result == DialogResult.Cancel)
@@ -71,7 +71,7 @@ namespace AppTitlesAnime
                 return;
 
             Type type = db.Types.Find(id);
-            FormAddType formAddtype = new();
+            FormAddUpdateType formAddtype = new();
             formAddtype.textBoxTypeName.Text = type.TypeName;
 
             DialogResult result = formAddtype.ShowDialog(this);

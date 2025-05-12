@@ -38,7 +38,7 @@ namespace AppTitlesAnime
 
         private void BtnAddStatus_Click(object sender, EventArgs e)
         {
-            FormAddStatus formAddStatus = new(); // Создает новый экземпляр формы для добавления статуса
+            FormAddUpdateStatus formAddStatus = new(); // Создает новый экземпляр формы для добавления статуса
             DialogResult result = formAddStatus.ShowDialog(this); // Вызывает диалоговое окно
 
             if (result == DialogResult.Cancel) // если пользователь нашёл на Отмена, то return закрывает программу
@@ -67,7 +67,7 @@ namespace AppTitlesAnime
                 return;
 
             Status status = db.Statuses.Find(id); // Находит статус в базе данных по идентификатору id
-            FormAddStatus formAddstatus = new(); // Создает новый экземпляр формы для редактирования статуса
+            FormAddUpdateStatus formAddstatus = new(); // Создает новый экземпляр формы для редактирования статуса
             formAddstatus.textBoxStatusName.Text = status.StatusName; // Устанавливает текстовое поле формы значением имени статуса, чтобы пользователь мог его изменить
 
             DialogResult result = formAddstatus.ShowDialog(this); // Показывает форму как модальное диалоговое окно и получает результат

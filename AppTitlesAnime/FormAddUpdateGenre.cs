@@ -4,10 +4,10 @@ using AppContext = AppTitlesAnime.Models.AppContext;
 
 namespace AppTitlesAnime
 {
-    public partial class FormAddGenre : Form
+    public partial class FormAddUpdateGenre : Form
     {
         private AppContext db;
-        public FormAddGenre()
+        public FormAddUpdateGenre()
         {
             InitializeComponent();
         }

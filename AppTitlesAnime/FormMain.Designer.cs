@@ -31,6 +31,7 @@
             btnShowTypes = new Button();
             btnShowGenres = new Button();
             btnShowStatuses = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btnShowTypes
@@ -66,18 +67,32 @@
             btnShowStatuses.UseVisualStyleBackColor = true;
             btnShowStatuses.Click += BtnShowStatuses_Click;
             // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.Location = new Point(12, 135);
+            button1.Name = "button1";
+            button1.Size = new Size(265, 35);
+            button1.TabIndex = 3;
+            button1.Text = "Отобразить список \"Аниме\"";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += Button1_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(845, 409);
+            Controls.Add(button1);
             Controls.Add(btnShowStatuses);
             Controls.Add(btnShowGenres);
             Controls.Add(btnShowTypes);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Главная форма";
             ResumeLayout(false);
             PerformLayout();
@@ -88,5 +103,6 @@
         private Button btnShowTypes;
         private Button btnShowGenres;
         private Button btnShowStatuses;
+        private Button button1;
     }
 }
